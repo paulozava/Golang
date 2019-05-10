@@ -13,8 +13,8 @@ func main() {
 	for index := 0; index < len(numbers); index++ {
 		number := numbers[index]
 		if number < 2 {
-
-			fmt.Println("2 minor")
+			added := add(12, number)
+			fmt.Println(added)
 		} else if number == 2 {
 			fmt.Println("2 inside")
 		} else {
