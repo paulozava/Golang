@@ -1,10 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println(century(10))
+	fmt.Println(EvenOrOdd(3))
 }
+
+//EvenOrOdd recive a number and return Even if its so, else return Odd
+func EvenOrOdd(number int) string {
+	if number%2 == 0.0 {
+		return "Even"
+	}
+	return "Odd"
+}
+
 func century(year int) int {
 	decade := int((year-1)/100) + 1
 	return decade
