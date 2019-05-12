@@ -8,8 +8,20 @@ import (
 
 func main() {
 	// fmt.Println(SumEvenFibonacci(1))
-	teste := []string{"I", "wish", "I", "hadn't", "come"}
-	fmt.Println(PartList(teste))
+	teste := []int{1, 2, 2, -5, 5, -5}
+	fmt.Println(multipleOfIndex(teste))
+}
+
+// multipleOfIndex Return a new array consisting of elements which are multiple of their own index in input array
+func multipleOfIndex(ints []int) []int {
+	var response []int
+	for index := 1; index < len(ints); index++ {
+		item := ints[index]
+		if item%index == 0.0 {
+			response = append(response, item)
+		}
+	}
+	return response
 }
 
 //PartList return a coma moving string
