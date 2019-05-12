@@ -3,10 +3,22 @@ package main
 import (
 	"fmt"
 	"math"
+	"strings"
 )
 
 func main() {
-	fmt.Println(SumEvenFibonacci(1))
+	// fmt.Println(SumEvenFibonacci(1))
+	teste := []string{"I", "wish", "I", "hadn't", "come"}
+	fmt.Println(PartList(teste))
+}
+
+//PartList return a coma moving string
+func PartList(arr []string) string {
+	var partial string
+	for index := 1; index < len(arr); index++ {
+		partial = partial + fmt.Sprintf("(%s, %s)", strings.Join(arr[:index], " "), strings.Join(arr[index:], " "))
+	}
+	return partial
 }
 
 // SumEvenFibonacci return a sum of all evens in a fibonacci's sequence
