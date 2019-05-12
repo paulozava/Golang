@@ -2,10 +2,19 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func main() {
-	fmt.Println(EvenOrOdd(3))
+	fmt.Println(EquableTriangle(2, 3, 4))
+}
+
+func EquableTriangle(a, b, c int) bool {
+	af, bf, cf := float64(a), float64(b), float64(c)
+	perimeter := af + bf + cf
+	semiPerimeter := perimeter / 2
+	area := math.Sqrt(semiPerimeter * (semiPerimeter - af) * (semiPerimeter - bf) * (semiPerimeter - cf))
+	return perimeter == area
 }
 
 //EvenOrOdd recive a number and return Even if its so, else return Odd
