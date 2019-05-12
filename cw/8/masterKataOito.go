@@ -6,7 +6,30 @@ import (
 )
 
 func main() {
-	fmt.Println(EquableTriangle(2, 3, 4))
+	fmt.Println(SumEvenFibonacci(1))
+}
+
+// SumEvenFibonacci return a sum of all evens in a fibonacci's sequence
+func SumEvenFibonacci(limit int) int {
+	fibo := Fibonacci(limit)
+	acc := 0
+	for _, element := range fibo {
+		if element%2 == 0 {
+			acc += element
+		}
+	}
+	return acc
+}
+
+//Fibonacci return a list with fibonacci sequence
+func Fibonacci(limit int) []int {
+	a, b := 1, 1
+	fiboList := []int{1, 1}
+	for b < limit {
+		a, b = b, a+b
+		fiboList = append(fiboList, b)
+	}
+	return fiboList
 }
 
 //EquableTriangle check if triangle is equable
