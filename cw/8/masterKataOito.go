@@ -5,6 +5,8 @@ import "fmt"
 func main() {
 	fmt.Println(PositiveSum([]int{1, -1, -12, 6}))
 }
+
+//PositiveSum takes an array of int and return the sum of positive ones
 func PositiveSum(numbers []int) int {
 	accumulator := 0
 	for _, number := range numbers {
@@ -13,4 +15,7 @@ func PositiveSum(numbers []int) int {
 		}
 	}
 	return accumulator
+}
+func combat(health, damage float64) float64 {
+
 }
