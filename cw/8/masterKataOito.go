@@ -9,6 +9,7 @@ func main() {
 	fmt.Println(EquableTriangle(2, 3, 4))
 }
 
+//EquableTriangle check if triangle is equable
 func EquableTriangle(a, b, c int) bool {
 	af, bf, cf := float64(a), float64(b), float64(c)
 	perimeter := af + bf + cf
