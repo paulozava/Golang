@@ -3,7 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(Maps([]int{10, 100}))
+	fmt.Println(century(10))
+}
+func century(year int) int {
+	decade := int((year-1)/100) + 1
+	return decade
 }
 
 //Maps takes an array of int, double its elements, and return a new int array
