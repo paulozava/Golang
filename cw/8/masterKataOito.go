@@ -3,7 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(combat(10.0, 10.10))
+	fmt.Println(Maps([]int{10, 100}))
+}
+
+//Maps takes an array of int, double its elements, and return a new int array
+func Maps(numbers []int) []int {
+	var newNumbers []int
+	for _, number := range numbers {
+		newNumbers = append(newNumbers, number*2)
+	}
+	return newNumbers
 }
 func combat(health, damage float64) float64 {
 	health -= damage
