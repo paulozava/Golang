@@ -8,8 +8,25 @@ import (
 
 func main() {
 	// fmt.Println(SumEvenFibonacci(1))
-	teste := []int{1, 2, 2, -5, 5, -5}
-	fmt.Println(multipleOfIndex(teste))
+	// teste := []int{1, 2, 2, -5, 5, -5}
+	for index := 0; index < 20; index++ {
+		fmt.Println(Fusc(index))
+	}
+}
+
+// Fusc test recursion
+func Fusc(n int) int {
+	switch {
+	case n == 0:
+		return 0
+	case n == 1:
+		return 1
+	case n%2 == 0:
+		return Fusc(n / 2)
+	default:
+		n = (n - 1) / 2
+		return Fusc(n) + Fusc(n+1)
+	}
 }
 
 // multipleOfIndex Return a new array consisting of elements which are multiple of their own index in input array
