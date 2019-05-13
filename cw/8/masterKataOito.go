@@ -12,7 +12,18 @@ func main() {
 	// for index := 0; index < 20; index++ {
 	// 	fmt.Println(Fusc(index))
 	// }
-	fmt.Println(CartesianNeighbor(2, 2))
+	fmt.Println(Evaporator(10.0, 10, 10))
+}
+
+// Evaporator calculate evaporation by brute force algol
+func Evaporator(content float64, evapPerDay int, threshold int) int {
+	evapPerDayFloat, thresholdFloat := (100.0-float64(evapPerDay))/100.0, float64(threshold)/100.0
+	utilContent := content * thresholdFloat
+	days := 0
+	for ; content > utilContent; days++ {
+		content *= evapPerDayFloat
+	}
+	return days
 }
 
 func CartesianNeighbor(x, y int) [][]int {
