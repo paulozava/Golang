@@ -38,6 +38,7 @@ func Evaporator(content float64, evapPerDay int, threshold int) int {
 	return days
 }
 
+//CartesianNeighbor  just a kata
 func CartesianNeighbor(x, y int) [][]int {
 	var coordinates [][]int
 	movingX := x - 1

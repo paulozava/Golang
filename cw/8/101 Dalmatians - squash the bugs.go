@@ -9,6 +9,7 @@ func main() {
 	fmt.Println(HowManyDalmatians(33))
 }
 
+// HowManyDalmatians just a kata
 func HowManyDalmatians(number int) string {
 	switch {
 	case number < 11:
