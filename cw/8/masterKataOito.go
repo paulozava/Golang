@@ -12,7 +12,25 @@ func main() {
 	// for index := 0; index < 20; index++ {
 	// 	fmt.Println(Fusc(index))
 	// }
-	fmt.Println(bandNameGenerator("alaska"))
+	fmt.Println(CartesianNeighbor(2, 2))
+}
+
+func CartesianNeighbor(x, y int) [][]int {
+	var coordinates [][]int
+	movingX := x - 1
+	for horizontal := 0; horizontal < 3; horizontal++ {
+		movingY := y - 1
+		for vertical := 0; vertical < 3; vertical++ {
+			if movingX != x || movingY != y {
+				coordinate := []int{movingX, movingY}
+				coordinates = append(coordinates, coordinate)
+			}
+			movingY++
+		}
+		movingX++
+	}
+	return coordinates
+
 }
 
 // bandNameGenerator is a Band name generator
