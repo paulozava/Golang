@@ -9,9 +9,20 @@ import (
 func main() {
 	// fmt.Println(SumEvenFibonacci(1))
 	// teste := []int{1, 2, 2, -5, 5, -5}
-	for index := 0; index < 20; index++ {
-		fmt.Println(Fusc(index))
+	// for index := 0; index < 20; index++ {
+	// 	fmt.Println(Fusc(index))
+	// }
+	fmt.Println(bandNameGenerator("alaska"))
+}
+
+// bandNameGenerator is a Band name generator
+func bandNameGenerator(word string) string {
+	word = strings.ToLower(word)
+	start, end := word[:1], word[len(word)-1:]
+	if start == end {
+		return fmt.Sprintf("%s%s", strings.Title(word[:len(word)-1]), word)
 	}
+	return fmt.Sprintf("The %s", strings.Title(word))
 }
 
 // Fusc test recursion
