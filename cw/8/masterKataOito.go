@@ -12,7 +12,19 @@ func main() {
 	// for index := 0; index < 20; index++ {
 	// 	fmt.Println(Fusc(index))
 	// }
-	fmt.Println(Evaporator(10.0, 10, 10))
+	fmt.Println(Gps(10, []float64{0.0, 0.23, 0.46, 0.69, 0.92, 1.15, 1.38, 1.61}))
+	// fmt.Println(len([]int{1, 2, 3}))
+}
+
+// Gps return the max speed from segments
+func Gps(s int, segments []float64) int {
+	var maxSpeed float64
+	for index := 1; index < len(segments); index++ {
+		startSegment, endSegment := segments[index-1], segments[index]
+		kmPerHour := 3600.0 * (endSegment - startSegment) / float64(s)
+		maxSpeed = math.Max(maxSpeed, kmPerHour)
+	}
+	return int(maxSpeed)
 }
 
 // Evaporator calculate evaporation by brute force algol
